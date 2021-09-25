@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+// import 'reset-css'
+// import NavbarScroller from './components/NavbarScroller';
+// import Auth from './auth/Auth';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+// const navigation = {
+//   brand: { name: "The Pufferator", to: "/home" },
+//   links: [
+//     { name: "Home", to: "/home" }, /**home */
+//     { name: "Cigar", to: "/cigar" }, /**cigar */
+//     { name: "Bars", to: "/tobaccobars" }, /**bar */
+//     { name: "Resources", to: "/resources" }, /**resources */
+//     { name: "Contact", to: "/contact" },
+//   ]
+// }
+export default class App extends Component <{}, {}> {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+
+    };
+
+  }
+
+  componentDidMount() {
+
+  }
+  
+  render () {
+    // const { brand, links } = navigation;
+    return (
+      <div className="App">
+          <p>
+            The Pufferator: under construction!
+          </p>
+      </div>
+    );
+  }
 }
 
-export default App;
