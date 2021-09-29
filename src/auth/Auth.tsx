@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Signup from './Signup';
 import Login from './Login';
+import './Auth.css'
 import { Button, Card } from 'antd';
 
 type LoginProps = {
@@ -19,7 +20,7 @@ export default class Auth extends Component < LoginProps, UserState > {
             showLogin: false
         };
     }
-    loginToggle = (e: React.FormEvent<HTMLFormElement>) => {
+    loginToggle = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
 		e.preventDefault();
 		if (this.state.showLogin === false) {
 			return this.setState({
@@ -57,7 +58,7 @@ export default class Auth extends Component < LoginProps, UserState > {
 				</Card>
 				<br />
 			</div>
-        )
+        );
 
     }
 }    

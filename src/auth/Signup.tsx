@@ -3,7 +3,7 @@ import APIURL from '../helpers/environment';
 import { Form, Input, Button } from 'antd';
 
 type SignupState = {
-    username: string;
+    username: string,
     password: string
 };
 
@@ -30,7 +30,7 @@ export default class Signup extends Component <SignupProps, SignupState> {
         }
 
 		try {
-            const res = await fetch(APIURL, {
+            const res = await fetch(`${APIURL}/user/create`, {
                 method: "POST",
                 body: JSON.stringify(reqBody),
                 headers: {
@@ -45,8 +45,8 @@ export default class Signup extends Component <SignupProps, SignupState> {
 				console.log(errMsg)
             } else {
                 console.log(json.Message);
-                this.props.updateToken('');
-				this.props.updateUserRole('');
+                this.props.updateToken(json.sessionToken);
+				this.props.updateUserRole(json.userRole);
             }
 		} catch (e) {
             console.log(e);

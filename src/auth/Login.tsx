@@ -44,15 +44,11 @@ export default class Login extends Component<LoginProps, State> {
 
             if (json.errors) {
                 let errMsg = json.errors[0].message
-                // this.setState({
-                //     errorText: errMsg.charAt(0).toUpperCase() + errMsg.slice(1) + '.'
-                // })
-                // throw new Error(json.errors[0].message)
                 console.log(errMsg)
             } else {
                 console.log(json.Message);
-                this.props.updateToken('');
-                this.props.updateUserRole('');
+                this.props.updateToken(json.sessionToken);
+                this.props.updateUserRole(json.user.userRole);
             }
         } catch (e) {
             console.log(e);
