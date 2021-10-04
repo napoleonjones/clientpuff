@@ -64,13 +64,13 @@ export default class Login extends Component<LoginProps, State> {
         }
     };
 
-    handleUsername = (e) => {
+    handleUsername = (e : any) => {
         this.setState({
             username: e.target.value
         })
     }
 
-    handlePassword = (e) => {
+    handlePassword = (e : any) => {
         this.setState({
             password: e.target.value
         })
