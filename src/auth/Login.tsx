@@ -6,11 +6,13 @@ import { Form, Input, Button } from 'antd';
 type State = {
     username: string;
     password: string;
+    signup: true,
+    errorText: string,
 };
 
 interface LoginProps {
     updateToken: (newToken: string) => void;
-    updateUserRole: any;
+    updateUserRole: (newUserRole: string) => void
     // setSessionToken: (newToken: string) => void;
 }
 
@@ -19,7 +21,9 @@ export default class Login extends Component<LoginProps, State> {
         super(props);
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            signup: true,
+            errorText: '',
         };
     }
 
@@ -45,6 +49,11 @@ export default class Login extends Component<LoginProps, State> {
             if (json.errors) {
                 let errMsg = json.errors[0].message
                 console.log(errMsg)
+                this.setState({
+                    /** */
+                    errorText: errMsg.charAt(0).toUpperCase() + errMsg.slice(1) + '.'
+                })
+                
             } else {
                 console.log(json.Message);
                 this.props.updateToken(json.sessionToken);
@@ -54,6 +63,22 @@ export default class Login extends Component<LoginProps, State> {
             console.log(e);
         }
     };
+
+    handleUsername = (e) => {
+        this.setState({
+            username: e.target.value
+        })
+    }
+
+    handlePassword = (e) => {
+        this.setState({
+            password: e.target.value
+        })
+    } 
+
+    // componentDidMount(){
+    //     this.props.setIsClass(Boolean(Auth?.prototype?.render))
+    // }
 
     render() {
         return (

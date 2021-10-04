@@ -1,10 +1,10 @@
-import * as React from 'react';
+// import React from 'react';
 
-export class CigarReviews extends React.Component <{}, {}> {
-    render (){
-        return (
-            <>
-            </>
-        )
-    };
-}
+// export class CigarReviews extends React.Component <{}, {}> {
+//     render (){
+//         return (
+//             <>
+//             </>
+//         )
+//     };
+// }

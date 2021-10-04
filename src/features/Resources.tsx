@@ -1,10 +1,10 @@
-import * as React from 'react';
+// import * as React from 'react';
 
-export class Resources extends React.Component <{}, {}> {
-    render (){
-        return (
-            <>
-            </>
-        )
-    };
-}
+// export class Resources extends React.Component <{}, {}> {
+//     render (){
+//         return (
+//             <>
+//             </>
+//         )
+//     };
+// }
